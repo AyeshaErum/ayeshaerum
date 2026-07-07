@@ -1,5 +1,5 @@
 import PageShell from '../components/PageShell.jsx'
-import { achievements } from '../data/cv.js'
+import { achievements, leadership } from '../data/cv.js'
 
 const medalClass = (place) => {
   if (place === '1st') return 'award__medal award__medal--gold'
@@ -23,6 +23,21 @@ export default function Achievements() {
             {a.year && <span className="award__year">{a.year}</span>}
           </div>
         ))}
+      </div>
+
+      <hr className="rule" />
+
+      <p className="eyebrow">LEADERSHIP</p>
+      <div className="award">
+        <span className="award__medal">✦</span>
+        <div>
+          <h2 className="award__title h-serif">{leadership.role}</h2>
+          <ul className="bullets">
+            {leadership.bullets.map((b) => (
+              <li key={b}>{b}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </PageShell>
   )

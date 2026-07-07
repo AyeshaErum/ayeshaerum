@@ -1,4 +1,6 @@
 // All content sourced from AyeshaErum_CV.pdf — keep in sync with the CV.
+// This file is the ONLY place site content lives. See HOW_TO_ADD_CONTENT.md
+// at the project root for plain-language editing instructions.
 
 export const profile = {
   name: 'Ayesha Erum',
@@ -6,6 +8,7 @@ export const profile = {
   location: 'Doha, Qatar',
   email: 'ayeshaerum2006@gmail.com',
   linkedin: 'https://www.linkedin.com/in/ayeshaerum/',
+  github: 'https://github.com/AyeshaErum',
   summary:
     'Cybersecurity student at UDST (GPA: 3.98) with experience in threat intelligence, AI security research, web application security, and secure application development. Contributing to LLM vulnerability research at QCRI and threat intelligence operations within CYBER+MDR environments at Digibit. Skilled in SIEM analysis, penetration testing methodologies, and security automation workflows.',
 }
@@ -25,11 +28,23 @@ export const education = {
   ],
 }
 
+// LOGOS: each experience entry points at an image in public/assets/logos/.
+// The files there are neutral placeholders — to use a real company logo,
+// simply replace the file (keep the same filename) with the real image:
+//   QCRI          -> public/assets/logos/qcri.svg   (or .png, then update the path below)
+//   Digibit       -> public/assets/logos/digibit.svg
+//   UDST          -> public/assets/logos/udst.svg
+//   Be My Sense   -> public/assets/logos/bemysense.svg
+// No layout code needs to change — the badge sizes the image automatically.
 export const experience = [
+  // TEMPLATE: duplicate the block below (from `{` to `},`) to add a new
+  // experience entry, then edit every field. `note` is optional — delete the
+  // line if not needed. Newest job goes first in this list.
   {
     role: 'Cybersecurity Research Intern',
     org: 'Qatar Computing Research Institute (QCRI)',
     period: 'May 2026 – Ongoing',
+    logo: '/assets/logos/qcri.svg',
     note: 'Project: Understanding LLM-Generated Vulnerability Reports in Open-Source Ecosystems',
     bullets: [
       'Researching security implications of LLM-generated vulnerability reports across open-source ecosystems and AI-assisted security workflows',
@@ -41,6 +56,7 @@ export const experience = [
     role: 'Network Threat Intelligence Analyst Intern',
     org: 'Digibit – Beyond Technology',
     period: 'May 2026 – Ongoing',
+    logo: '/assets/logos/digibit.svg',
     bullets: [
       'Investigating threat indicators, attack patterns and emerging cyber risks within CYBER+MDR operational environments',
       'Correlating security telemetry and threat intelligence feeds to support detection workflows and operational threat analysis using SIEM-driven processes',
@@ -51,6 +67,7 @@ export const experience = [
     role: 'Applied AI & NLP Researcher',
     org: 'UDST',
     period: 'January 2026 – Present',
+    logo: '/assets/logos/udst.svg',
     bullets: [
       'Developing LLM-powered referral categorization system for healthcare triage and workflow automation',
       'Performing data preprocessing, prompt engineering, model evaluation, and NLP pipeline optimization',
@@ -62,6 +79,7 @@ export const experience = [
     role: 'Operations & Marketing Lead Intern',
     org: 'Be My Sense',
     period: 'Jul 2025 – April 2026',
+    logo: '/assets/logos/bemysense.svg',
     bullets: [
       'Led a 16-member cross-functional team driving 140% LinkedIn growth through analytics-driven outreach',
       'Coordinated digital operations and external representation during Web Summit Qatar 2026',
@@ -71,12 +89,14 @@ export const experience = [
     role: 'Peer Tutor – Computer Programming',
     org: 'UDST',
     period: 'Jan 2024 – April 2026',
+    logo: '/assets/logos/udst.svg',
     bullets: [
       'Delivered technical tutoring in Python, Java, cybersecurity, and AI concepts, supporting 20+ students across programming and technical coursework',
     ],
   },
 ]
 
+// Shown on the Achievements page under "Leadership".
 export const leadership = {
   role: 'College of Computing and IT Representative — Student Council, UDST',
   bullets: [
@@ -85,49 +105,42 @@ export const leadership = {
   ],
 }
 
+// Skill tree branches (About Me page). Content from my-docs/skills.txt / the CV.
+// TEMPLATE: duplicate a `{ label: ..., items: [...] },` block to add a new
+// branch — the tree lays out up to 8 branches automatically.
 export const skills = [
   {
-    label: 'CORE SECURITY',
-    module: 'core_security.sys',
-    level: 92,
+    label: 'Core Security Competencies',
     items: [
       'Threat Intelligence', 'Threat Detection', 'Vulnerability Assessment', 'SIEM Analysis',
       'Telemetry Correlation', 'Security Monitoring', 'Incident Investigation', 'Penetration Testing', 'Web Security',
     ],
   },
   {
-    label: 'SECURITY TOOLS',
-    module: 'toolchain.bin',
-    level: 88,
+    label: 'Security Tools',
     items: ['Wireshark', 'Burp Suite', 'Nmap', 'Metasploit', 'Splunk SIEM'],
   },
   {
-    label: 'PROGRAMMING',
-    module: 'languages.dll',
-    level: 85,
+    label: 'Programming',
     items: ['Python', 'JavaScript', 'Node.js', 'PHP', 'Bash', 'MySQL'],
   },
   {
-    label: 'NETWORKING',
-    module: 'net_stack.drv',
-    level: 84,
+    label: 'Networking & Infrastructure',
     items: ['TCP/IP', 'DNS', 'HTTP/HTTPS', 'VPNs', 'NGFW Concepts', 'IDPS', 'Network Architecture'],
   },
   {
-    label: 'CLOUD & AUTOMATION',
-    module: 'autopilot.cfg',
-    level: 80,
+    label: 'Cloud & Automation',
     items: ['n8n', 'Railway', 'REST APIs', 'GitHub', 'Workflow Automation'],
   },
   {
-    label: 'CRYPTOGRAPHY',
-    module: 'cipher.key',
-    level: 82,
+    label: 'Cryptography & Security Concepts',
     items: ['AES-256', 'RSA-2048', 'SHA-256', 'PKI', 'Secure Session Management'],
   },
 ]
 
 export const certifications = [
+  // TEMPLATE: duplicate the line below to add a new certification, then edit
+  // both fields.
   { name: 'Network Security Fundamentals', issuer: 'Palo Alto Networks' },
   { name: 'Cybersecurity Foundation', issuer: 'Palo Alto Networks' },
   { name: 'Introduction to Cybersecurity', issuer: 'Cisco NetAcad' },
@@ -136,6 +149,8 @@ export const certifications = [
 ]
 
 export const training = [
+  // TEMPLATE: add a new line in quotes, ending with a comma, for each new
+  // training item.
   'NetWitness Incident Forensics Workshop',
   'Tata Cybersecurity Analyst Simulation',
   'Mastercard Cybersecurity Virtual Experience',
@@ -143,6 +158,9 @@ export const training = [
 ]
 
 export const projects = [
+  // TEMPLATE: duplicate the block below (from `{` to `},`) to add a new
+  // project. `file` is the decorative folder-tab filename shown on the card;
+  // `tags` are the small labels under the description.
   {
     name: 'Secure Email Application with Multi-Layer Encryption',
     file: 'secure_mail.py',
@@ -180,6 +198,9 @@ export const projects = [
 ]
 
 export const achievements = [
+  // TEMPLATE: duplicate the line below to add a new achievement. `place` shows
+  // in the medal circle ('1st', '2nd', '3rd', or '—' for a star). Leave `year`
+  // as '' to hide it.
   { place: '2nd', title: 'LifeLines Hackathon', year: '2026' },
   { place: '3rd', title: 'Capture The Flag Competition', year: '' },
   { place: '3rd', title: 'Mobile App Development Competition', year: '2025' },
@@ -189,6 +210,8 @@ export const achievements = [
 ]
 
 export const volunteering = [
+  // TEMPLATE: duplicate the block below to add a new volunteering entry, then
+  // edit both fields.
   {
     title: 'Web Summit Qatar 2025',
     role: 'Event Volunteer (Registration & Logistics)',

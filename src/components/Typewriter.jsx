@@ -5,14 +5,15 @@ const ROWS = [
   ['E', 'R', 'U', 'M'],
 ]
 
-// Name rendered as keycaps that "type in" one by one. Click to replay.
+// Name rendered as keyboard keys. Each key physically depresses and pops back
+// in sequence, like someone typing. Click anywhere on the name to replay.
 export default function Typewriter() {
   const [count, setCount] = useState(0)
   const total = ROWS.flat().length
 
   useEffect(() => {
     if (count >= total) return
-    const t = setTimeout(() => setCount((c) => c + 1), 130)
+    const t = setTimeout(() => setCount((c) => c + 1), 150)
     return () => clearTimeout(t)
   }, [count, total])
 
@@ -25,8 +26,11 @@ export default function Typewriter() {
         <span className="typename__row" key={r}>
           {row.map((ch) => {
             const idx = i++
+            const cls = ['keycap', idx < count && 'is-typed', idx === count - 1 && 'is-pressed']
+              .filter(Boolean)
+              .join(' ')
             return (
-              <span key={idx} className={`keycap ${idx < count ? 'is-typed' : ''}`}>
+              <span key={idx} className={cls}>
                 {ch}
               </span>
             )

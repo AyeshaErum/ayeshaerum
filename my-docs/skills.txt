@@ -1,0 +1,6 @@
+- Core Security Competencies: Threat Intelligence, Threat Detection, Vulnerability Assessment, SIEM Analysis, Telemetry Correlation, Security Monitoring, Incident Investigation, Penetration Testing, Web Security
+- Security Tools: Wireshark, Burp Suite, Nmap, Metasploit, Splunk SIEM
+- Programming: Python, JavaScript, Node.js, PHP, Bash, MySQL
+- Networking & Infrastructure: TCP/IP, DNS, HTTP/HTTPS, VPNs, NGFW Concepts, IDPS, Network Architecture
+- Cloud & Automation: n8n, Railway, REST APIs, GitHub, Workflow Automation
+- Cryptography & Security Concepts: AES-256, RSA-2048, SHA-256, PKI, Secure Session Management

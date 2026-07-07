@@ -15,19 +15,6 @@ const SCATTER = {
   '/dm': { left: '81%', top: '81%' },
 }
 
-// Minimal line-art streetlamp; the avatar stands below the lamp head.
-function Streetlamp() {
-  return (
-    <svg className="lamp" width="150" height="120" viewBox="0 0 150 120" fill="none" aria-hidden="true">
-      {/* pole rises off the right edge of the scene */}
-      <path d="M131 120 V 34 Q 131 10 106 10 L 88 10" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      {/* lamp head with bulb tucked underneath */}
-      <path d="M60 6 h30 l-5 14 h-20 z" fill="currentColor" />
-      <circle cx="75" cy="26" r="6.5" fill="var(--lamp-light)" stroke="currentColor" strokeWidth="2.5" />
-    </svg>
-  )
-}
-
 export default function Home() {
   return (
     <>
@@ -38,8 +25,7 @@ export default function Home() {
           <p className="hero-tagline">{profile.tagline.toUpperCase()}</p>
         </div>
 
-        <div className="lamp-scene">
-          <Streetlamp />
+        <div className="avatar-scene">
           <img className="avatar" src="/assets/avatar-withkeyboard.png" alt="Ayesha Erum's avatar holding a pink keyboard" />
         </div>
 

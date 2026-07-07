@@ -1,15 +1,6 @@
 import PageShell from '../components/PageShell.jsx'
 import { experience } from '../data/cv.js'
 
-const initials = (org) =>
-  org
-    .split(/[\s–-]+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join('')
-    .toUpperCase()
-
 export default function Experience() {
   return (
     <PageShell>
@@ -21,8 +12,10 @@ export default function Experience() {
       <div style={{ marginTop: '0.75rem' }}>
         {experience.map((job) => (
           <article className="job" key={job.role}>
+            {/* company logo slot — image paths and how to swap in real logos
+                are documented next to the `experience` data in src/data/cv.js */}
             <div className="job__badge" aria-hidden="true">
-              <span>{initials(job.org)}</span>
+              <img src={job.logo} alt="" />
             </div>
             <div>
               <h2 className="job__role h-serif">{job.role}</h2>

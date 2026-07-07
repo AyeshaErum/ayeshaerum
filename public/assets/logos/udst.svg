@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Placeholder logo. Replace this file with the real UDST logo (same filename). -->
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="#f7e3c8" stroke="#701d33" stroke-width="3"/>
+  <text x="32" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#701d33">UD</text>
+</svg>
