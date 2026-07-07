@@ -140,8 +140,8 @@ function EmailForm({ onBack }) {
     <>
       <form className="paper" onSubmit={send}>
         <div className="paper__head">
-          <span>omont_2080</span>
-          <span>boring office</span>
+          <span>To:</span>
+          <span>ayeshaerum2006@gmail.com</span>
         </div>
         <label htmlFor="dm-subject">SUBJECT</label>
         <input
@@ -161,7 +161,7 @@ function EmailForm({ onBack }) {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onFocus={() => setActiveField('message')}
-          placeholder="old memory of new time ...."
+          placeholder="your message ...."
         />
         <div className="paper__actions">
           <button type="button" className="btn btn--ghost" onClick={onBack}>

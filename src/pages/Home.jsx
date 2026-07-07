@@ -1,6 +1,7 @@
 import TopNav from '../components/TopNav.jsx'
 import Folder from '../components/FolderIcon.jsx'
 import Typewriter from '../components/Typewriter.jsx'
+import GardenDoodle from '../components/GardenDoodle.jsx'
 import { folders, profile } from '../data/cv.js'
 
 // Slightly irregular scatter — mirrors the reference mockup's layout.
@@ -47,6 +48,8 @@ export default function Home() {
             <Folder key={f.path} to={f.path} label={f.label} />
           ))}
         </div>
+
+        <GardenDoodle />
       </div>
     </>
   )
