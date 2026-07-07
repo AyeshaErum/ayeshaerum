@@ -31,8 +31,8 @@ form submissions. This takes one minute:
 ## Deployment (already set up)
 
 The site is deployed to GitHub Pages at
-**https://ayeshaerum.github.io/portfolio-ayesha/** from the repository
-`AyeshaErum/portfolio-ayesha` (public).
+**https://ayeshaerum.github.io/ayeshaerum/** from the repository
+`AyeshaErum/ayeshaerum` (public).
 
 Deploys are automatic: every push to the `main` branch runs the GitHub
 Actions workflow in `.github/workflows/deploy.yml`, which builds the site and
@@ -49,7 +49,7 @@ publishes it. To update the live site:
    GitHub. When the workflow shows a green check, the change is live.
 
 Notes:
-- `vite.config.js` has `base: '/portfolio-ayesha/'` — if you ever rename the
+- `vite.config.js` has `base: '/ayeshaerum/'` — if you ever rename the
   repository, update that line to match.
 - `public/404.html` handles direct links to inner pages (like `/about`) on
   GitHub Pages. Leave `segmentCount = 1` unless you add a custom domain
