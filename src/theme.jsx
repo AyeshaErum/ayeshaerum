@@ -9,15 +9,6 @@ export function ThemeProvider({ children }) {
     document.documentElement.dataset.theme = theme
   }, [theme])
 
-  // Follow system preference only while the user hasn't chosen manually.
-  useEffect(() => {
-    if (localStorage.getItem('theme')) return
-    const mq = window.matchMedia('(prefers-color-scheme: dark)')
-    const onChange = (e) => setTheme(e.matches ? 'dark' : 'light')
-    mq.addEventListener('change', onChange)
-    return () => mq.removeEventListener('change', onChange)
-  }, [])
-
   const toggle = () => {
     setTheme((t) => {
       const next = t === 'light' ? 'dark' : 'light'

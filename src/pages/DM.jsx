@@ -114,26 +114,22 @@ function EmailForm({ onBack }) {
     [activeField, shift],
   )
 
-  const send = async (e) => {
+  const send = (e) => {
     e.preventDefault()
     if (!subject.trim() || !message.trim()) {
       setStatus('error')
       return
     }
-    setStatus('sending')
-    try {
-      // FormSubmit: free, no account, no backend — emails straight to the inbox.
-      const res = await fetch(`https://formsubmit.co/ajax/${profile.email}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ _subject: subject, subject, message, _template: 'box', _captcha: 'false' }),
-      })
-      if (!res.ok) throw new Error('send failed')
-      setStatus('sent')
-      setTimeout(() => navigate('/'), 1800)
-    } catch {
-      setStatus('error')
-    }
+    // Open the visitor's own email app with subject and body pre-filled.
+    // encodeURIComponent keeps line breaks, "&", "?" etc. intact in the link.
+    const href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`
+    const a = document.createElement('a')
+    a.href = href
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+    setStatus('sent')
+    setTimeout(() => navigate('/'), 2500)
   }
 
   return (
@@ -167,13 +163,14 @@ function EmailForm({ onBack }) {
           <button type="button" className="btn btn--ghost" onClick={onBack}>
             BACK
           </button>
-          <button type="submit" className="btn" disabled={status === 'sending'}>
-            {status === 'sending' ? 'SENDING…' : 'SEND ⏎'}
+          <button type="submit" className="btn">
+            SEND ⏎
           </button>
         </div>
+        <p className="paper__note">SEND opens your email app — the message goes from your own account.</p>
       </form>
 
-      {status === 'sent' && <p className="dm-status">MESSAGE SENT — RETURNING TO DESKTOP…</p>}
+      {status === 'sent' && <p className="dm-status">OPENING YOUR EMAIL APP — HIT SEND THERE. RETURNING TO DESKTOP…</p>}
       {status === 'error' && (
         <p className="dm-status dm-status--error">SOMETHING WENT WRONG — CHECK BOTH FIELDS AND TRY AGAIN.</p>
       )}

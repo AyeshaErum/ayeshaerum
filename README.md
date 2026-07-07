@@ -6,27 +6,16 @@ desktop with scattered folders; each folder opens a real page at its own URL
 `/certifications`, `/volunteering`, `/dm`).
 
 Built with **Vite + React + React Router** (free, fast, real URL routes).
-Contact form emails are sent with **FormSubmit.co** (free, no account, no
-backend — the form posts to their endpoint and they forward it to your inbox).
+The DM contact form uses a `mailto:` link — pressing SEND opens the visitor's
+own email app with the subject and message pre-filled, so no third-party
+service ever handles the message.
 
 ## Run it locally
 
 1. Open this folder in a terminal (in VS Code: **Terminal → New Terminal**).
 2. Run `npm install` (first time only).
 3. Run `npm run dev`.
-4. Open the address it prints (usually `http://localhost:5173/`) in your browser.
-
-## One-time email activation (required before the DM form works)
-
-FormSubmit needs to verify that ayeshaerum2006@gmail.com wants to receive
-form submissions. This takes one minute:
-
-1. Run the site locally (steps above).
-2. Go to the **DM** page → choose **Email** → fill in any subject/message → press **SEND**.
-3. Open the inbox of **ayeshaerum2006@gmail.com**. You'll have an email from
-   FormSubmit with a big **"Activate Form"** button. Click it.
-4. That's it. Every submission from now on arrives as a normal email.
-   (The very first test message is not delivered — send yourself one more to confirm.)
+4. Open the address it prints in your browser.
 
 ## Deployment (already set up)
 

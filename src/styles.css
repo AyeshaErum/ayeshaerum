@@ -1406,6 +1406,15 @@ a {
   margin-top: 1.4rem;
 }
 
+.paper__note {
+  margin: 0.9rem 0 0;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  font-style: italic;
+  color: #8c5a6b;
+  text-align: right;
+}
+
 .btn {
   font-family: var(--font-mono);
   font-size: 0.68rem;
