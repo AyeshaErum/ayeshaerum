@@ -15,7 +15,7 @@ export default function Experience() {
             {/* company logo slot — image paths and how to swap in real logos
                 are documented next to the `experience` data in src/data/cv.js */}
             <div className="job__badge" aria-hidden="true">
-              <img src={job.logo} alt="" />
+              <img src={import.meta.env.BASE_URL + job.logo} alt="" />
             </div>
             <div>
               <h2 className="job__role h-serif">{job.role}</h2>

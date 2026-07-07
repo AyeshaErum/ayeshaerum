@@ -13,7 +13,12 @@ export default function About() {
             <p className="id-card__sub">CYBERSEC · THREAT INTEL · AI SECURITY</p>
           </div>
           {/* ID photo: the avatar's face, zoomed via CSS from avatar-standing.png */}
-          <div className="id-card__photo" role="img" aria-label="Ayesha's avatar ID photo" />
+          <div
+            className="id-card__photo"
+            role="img"
+            aria-label="Ayesha's avatar ID photo"
+            style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/avatar-standing.png)` }}
+          />
         </div>
         <dl className="id-card__rows">
           <div className="id-card__row">

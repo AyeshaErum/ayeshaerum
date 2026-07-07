@@ -740,14 +740,18 @@ a {
   gap: 1rem;
 }
 
-/* avatar face, zoomed in from the standing avatar render */
+/* avatar face, zoomed in from the standing avatar render
+   (background-image is set inline in About.jsx so the base path resolves) */
 .id-card__photo {
   flex: none;
   width: 92px;
   height: 112px;
   border: 2px solid var(--accent);
   border-radius: 10px;
-  background: var(--lavender-soft) url('/assets/avatar-standing.png') no-repeat 50% -12px / 230% auto;
+  background-color: var(--lavender-soft);
+  background-repeat: no-repeat;
+  background-position: 50% -12px;
+  background-size: 230% auto;
   position: relative;
 }
 

@@ -28,9 +28,10 @@ export const education = {
   ],
 }
 
-// LOGOS: each experience entry points at an image in public/assets/logos/.
-// The files there are neutral placeholders — to use a real company logo,
-// simply replace the file (keep the same filename) with the real image:
+// LOGOS: each experience entry points at an image in public/assets/logos/
+// (paths here are relative to that public folder). The files there are
+// neutral placeholders — to use a real company logo, simply replace the file
+// (keep the same filename) with the real image:
 //   QCRI          -> public/assets/logos/qcri.svg   (or .png, then update the path below)
 //   Digibit       -> public/assets/logos/digibit.svg
 //   UDST          -> public/assets/logos/udst.svg
@@ -44,7 +45,7 @@ export const experience = [
     role: 'Cybersecurity Research Intern',
     org: 'Qatar Computing Research Institute (QCRI)',
     period: 'May 2026 – Ongoing',
-    logo: '/assets/logos/qcri.svg',
+    logo: 'assets/logos/qcri.svg',
     note: 'Project: Understanding LLM-Generated Vulnerability Reports in Open-Source Ecosystems',
     bullets: [
       'Researching security implications of LLM-generated vulnerability reports across open-source ecosystems and AI-assisted security workflows',
@@ -56,7 +57,7 @@ export const experience = [
     role: 'Network Threat Intelligence Analyst Intern',
     org: 'Digibit – Beyond Technology',
     period: 'May 2026 – Ongoing',
-    logo: '/assets/logos/digibit.svg',
+    logo: 'assets/logos/digibit.svg',
     bullets: [
       'Investigating threat indicators, attack patterns and emerging cyber risks within CYBER+MDR operational environments',
       'Correlating security telemetry and threat intelligence feeds to support detection workflows and operational threat analysis using SIEM-driven processes',
@@ -67,7 +68,7 @@ export const experience = [
     role: 'Applied AI & NLP Researcher',
     org: 'UDST',
     period: 'January 2026 – Present',
-    logo: '/assets/logos/udst.svg',
+    logo: 'assets/logos/udst.svg',
     bullets: [
       'Developing LLM-powered referral categorization system for healthcare triage and workflow automation',
       'Performing data preprocessing, prompt engineering, model evaluation, and NLP pipeline optimization',
@@ -79,7 +80,7 @@ export const experience = [
     role: 'Operations & Marketing Lead Intern',
     org: 'Be My Sense',
     period: 'Jul 2025 – April 2026',
-    logo: '/assets/logos/bemysense.svg',
+    logo: 'assets/logos/bemysense.svg',
     bullets: [
       'Led a 16-member cross-functional team driving 140% LinkedIn growth through analytics-driven outreach',
       'Coordinated digital operations and external representation during Web Summit Qatar 2026',
@@ -89,7 +90,7 @@ export const experience = [
     role: 'Peer Tutor – Computer Programming',
     org: 'UDST',
     period: 'Jan 2024 – April 2026',
-    logo: '/assets/logos/udst.svg',
+    logo: 'assets/logos/udst.svg',
     bullets: [
       'Delivered technical tutoring in Python, Java, cybersecurity, and AI concepts, supporting 20+ students across programming and technical coursework',
     ],
@@ -107,7 +108,7 @@ export const leadership = {
 
 // Skill tree branches (About Me page). Content from my-docs/skills.txt / the CV.
 // TEMPLATE: duplicate a `{ label: ..., items: [...] },` block to add a new
-// branch — the tree lays out up to 8 branches automatically.
+// branch — the tree lays out up to 6 branches; extras appear in the legend.
 export const skills = [
   {
     label: 'Core Security Competencies',

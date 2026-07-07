@@ -28,7 +28,11 @@ export default function Home() {
 
         <div className="avatar-scene">
           <GardenDoodle />
-          <img className="avatar" src="/assets/avatar-withkeyboard.png" alt="Ayesha Erum's avatar holding a pink keyboard" />
+          <img
+            className="avatar"
+            src={`${import.meta.env.BASE_URL}assets/avatar-withkeyboard.png`}
+            alt="Ayesha Erum's avatar holding a pink keyboard"
+          />
         </div>
 
         {/* wide screens: scattered icons */}
