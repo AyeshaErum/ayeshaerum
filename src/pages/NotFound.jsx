@@ -3,7 +3,7 @@ import TopNav from '../components/TopNav.jsx'
 
 export default function NotFound() {
   return (
-    <>
+    <div className="page-overlay">
       <TopNav />
       <div className="error-stack">
         {[10, 20].map((offset) => (
@@ -34,6 +34,6 @@ export default function NotFound() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }

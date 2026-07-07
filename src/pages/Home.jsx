@@ -27,6 +27,7 @@ export default function Home() {
         </div>
 
         <div className="avatar-scene">
+          <GardenDoodle />
           <img className="avatar" src="/assets/avatar-withkeyboard.png" alt="Ayesha Erum's avatar holding a pink keyboard" />
         </div>
 
@@ -48,8 +49,6 @@ export default function Home() {
             <Folder key={f.path} to={f.path} label={f.label} />
           ))}
         </div>
-
-        <GardenDoodle />
       </div>
     </>
   )

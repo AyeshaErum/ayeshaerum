@@ -99,6 +99,43 @@ a {
   color: var(--accent);
 }
 
+/* --------------------------------------------------- desktop + page overlay */
+
+/* The desktop stays mounted underneath inner pages, blurred and inert. */
+.home-layer.is-blurred {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  filter: blur(7px) saturate(0.92);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Inner pages render inside this scrollable layer above the desktop. */
+.page-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow-y: auto;
+  background: color-mix(in srgb, var(--bg) 45%, transparent);
+  animation: overlay-in 0.22s ease-out both;
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-overlay {
+    animation: none;
+  }
+}
+
 /* ------------------------------------------------------------------ topnav */
 
 .topnav {
@@ -329,7 +366,7 @@ a {
   margin-top: 0.35rem;
 }
 
-/* avatar, centered on the desktop */
+/* avatar, centered on the desktop, standing in front of the garden doodle */
 
 .avatar-scene {
   position: relative;
@@ -341,30 +378,34 @@ a {
 }
 
 .avatar-scene .avatar {
+  position: relative;
+  z-index: 1;
   width: clamp(160px, 28vh, 240px);
   user-select: none;
   -webkit-user-drag: none;
 }
 
-/* garden doodle strip along the bottom of the desktop */
+/* garden doodle — far background, directly behind the avatar's feet */
 
 .garden {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(880px, 94vw);
   z-index: 0;
   pointer-events: none;
+  opacity: 0.55;
 }
 
 .garden svg {
   display: block;
   width: 100%;
-  height: clamp(70px, 12vh, 130px);
+  height: auto;
 }
 
 :root[data-theme='dark'] .garden {
-  opacity: 0.7;
+  opacity: 0.4;
 }
 
 /* scattered folders */
@@ -423,7 +464,7 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.4rem 1.6rem;
-  padding: 2rem 1.25rem 7.5rem;
+  padding: 2rem 1.25rem 3rem;
 }
 
 .desktop__folders--grid .folder {
